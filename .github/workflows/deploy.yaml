@@ -15,13 +15,6 @@ jobs:
       - run: docker build -t juunary/docker-frontend ./frontend
       - run: docker push juunary/docker-frontend
 
-      # nginx 이미지 빌드 및 푸시
-      - run: docker build -t juunary/docker-nginx ./nginx
-      - run: docker push juunary/docker-nginx
-
-      # backend 이미지 빌드 및 푸시
-      - run: docker build -t juunary/docker-backend ./backend
-      - run: docker push juunary/docker-backend
 
       # 배포용 압축 파일 생성
       - name: Generate deployment package
