@@ -31,7 +31,7 @@ app.post('/sendData', async (req, res) => {
 
 function runPythonScript(year, month, date, selectedCity, selectedModel) {
   return new Promise((resolve, reject) => {
-    const pythonProcess = spawn('python', ['Get.py', year, month, date, selectedCity, selectedModel]);
+    const pythonProcess = spawn('python3', ['/app/Get.py', year, month, date, selectedCity, selectedModel]);
 
       pythonProcess.stdout.on('data', (data) => {
           resolve(data.toString().trim());
